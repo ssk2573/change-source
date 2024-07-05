@@ -6,7 +6,7 @@ def update_file(file_path):
     with open(file_path, 'r') as file:
         content = file.read()
 
-    # Update the content
+    # replacement
     updated_content = content.replace(
         "https://dumps.wikimedia.org/enwiki/latest/enwiki-latest-pages-articles.xml.bz2",
         "https://dumps.wikimedia.your.org/enwiki/20220820/enwiki-20220820-pages-articles.xml.bz2"
@@ -15,7 +15,7 @@ def update_file(file_path):
         "'enwiki-latest-pages-articles.xml.bz2'"
     )
 
-    # Write the updated content back to the file
+
     with open(file_path, 'w') as file:
         file.write(updated_content)
 
@@ -27,7 +27,7 @@ if __name__ == "__main__":
 
     file_path = sys.argv[1]
 
-    # Check if the file exists
+    # Checking the file path 
     if not os.path.isfile(file_path):
         print(f"Error: File '{file_path}' not found.")
         sys.exit(1)
